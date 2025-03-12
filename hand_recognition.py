@@ -36,8 +36,8 @@ with open(str(Path("./gesture_recognizer.task").resolve()), 'rb') as file:
     model_data = file.read()
 
     options = GestureRecognizerOptions(
-        base_options=BaseOptions(model_asset_buffer=model_data),
-        running_mode=VisionRunningMode.IMAGE)
+        base_options=BaseOptions(model_asset_buffer=model_data, delegate=BaseOptions.Delegate.GPU),
+        running_mode=VisionRunningMode.IMAGE,)
     with GestureRecognizer.create_from_options(options) as recognizer:
 
         cap = cv2.VideoCapture(0)
