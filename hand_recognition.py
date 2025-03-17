@@ -1,4 +1,3 @@
-#https://github.com/Sousannah/hand-tracking-using-mediapipe
 import cv2
 import mediapipe as mp
 from pythonosc.udp_client import SimpleUDPClient
